@@ -1,0 +1,61 @@
+NOUNS
+
+Collectable
+
+Enemy
+
+Hazard
+
+Player
+
+VERBS
+
+Create At Location
+
+Bounce
+X:
+Y:
+
+Jump
+Speed:
+Time Between Jumps
+
+Mover
+Speed:
+
+Move To
+
+Shoot At Mouse
+
+Shoot In Direction
+
+LOGIC
+
+Data
+Create a new custom data item, or change the value of one that already exists
+Variable Name: The name of the variable you want to create or edit.
+Value:
+
+Health
+
+EVENTS
+
+Click Event:
+
+Collision Event:
+
+Input Event:
+
+Timer Event:
+
+OTHER
+
+Lock
+When an object with the Key component overlaps an object that contains a Lock component, and the Lock's Code property is the same as this Key's Code property, an even is triggered on the Lock, and both the Key and Lock disappear.
+OnUnlock:
+Code:
+
+Key
+When an object with the Key component overlaps an object that contains a Lock component, and the Lock's Code property is the same as this Key's Code property, an even is triggered on the Lock, and both the Key and Lock disappear.
+Code: 
+
