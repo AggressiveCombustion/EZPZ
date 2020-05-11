@@ -28,6 +28,7 @@ public class Lock : MonoBehaviour
             {
                 onUnlock.Invoke();
                 Destroy(collision.gameObject);
+                Destroy(this);
             }
         }
     }

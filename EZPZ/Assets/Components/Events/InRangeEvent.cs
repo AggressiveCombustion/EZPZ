@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class InRangeEvent : MonoBehaviour
 {
+    public bool active = true;
     public Transform target;
     public float range = 0;
     public UnityEvent ifInRange;
@@ -20,5 +21,10 @@ public class InRangeEvent : MonoBehaviour
         {
             ifInRange.Invoke();
         }
+    }
+
+    public void SetActive(bool setActive)
+    {
+        active = setActive;
     }
 }

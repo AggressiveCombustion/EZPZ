@@ -5,9 +5,11 @@ using UnityEngine.Events;
 
 public class InputEvent: MonoBehaviour
 {
+    public bool active = true;
     public ButtonType key;
     public bool oneShot = false;
     public UnityEvent OnInput;
+
 
     bool completed = false;
     // Start is called before the first frame update
@@ -78,5 +80,10 @@ public class InputEvent: MonoBehaviour
         }
 
         return KeyCode.Asterisk;
+    }
+
+    public void SetActive(bool setActive)
+    {
+        active = setActive;
     }
 }

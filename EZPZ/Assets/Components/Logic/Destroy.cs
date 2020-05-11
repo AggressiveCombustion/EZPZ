@@ -36,7 +36,7 @@ public class Destroy : GameplayComponent
     public void DestroyTarget()
     {
         if (target == null)
-            return;
+            Destroy(gameObject);
         Destroy(target);
     }
 }

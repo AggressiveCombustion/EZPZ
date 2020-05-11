@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CompareEvent : GameplayComponent
+public class CompareEvent : MonoBehaviour
 {
     public enum Comparison
     {
@@ -14,13 +14,13 @@ public class CompareEvent : GameplayComponent
         lessThanOrEqualTo,
         notEqual
     }
-    
+
+    public bool active = true;
     public Comparison comparisonType;
-    
     public string variable = "";
     public int value;
-
     public UnityEvent ifComparisonIsTrue;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class CompareEvent : GameplayComponent
         
     }
 
-    public override void Update()
+    public void Update()
     {
         if (active)
             CheckComparison();
@@ -80,5 +80,10 @@ public class CompareEvent : GameplayComponent
                     ifComparisonIsTrue.Invoke();
                 break;
         }
+    }
+
+    public void SetActive(bool setActive)
+    {
+        active = setActive;
     }
 }

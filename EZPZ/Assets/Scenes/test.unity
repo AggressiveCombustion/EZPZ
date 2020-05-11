@@ -594,6 +594,9 @@ MonoBehaviour:
   speed: 3
   timeBetween: 0.5
   direction: 0
+  flipXBasedOnSpeed: 0
+  flipYBasedOnSpeed: 0
+  rotateBasedOnSpeed: 0
 --- !u!114 &820847079
 MonoBehaviour:
   m_ObjectHideFlags: 0

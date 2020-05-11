@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    public int health = 100;
+    public int maxHealth = 100;
+    public int currentHealth = 100;
+
+    public UnityEvent whenOutOfHealth;
+
+    bool activated = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +26,26 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if(health > 0)
-            health -= amount;
+        if(currentHealth > 0)
+            currentHealth -= amount;
 
-        if (health < 0)
-            health = 0;
+        if (currentHealth < 0)
+            currentHealth = 0;
+
+        if (currentHealth == 0 && whenOutOfHealth != null && !activated)
+        {
+            whenOutOfHealth.Invoke();
+            activated = true;
+        }
+    }
+
+    public void SetMaxHealth(int amount)
+    {
+        maxHealth = amount;
+    }
+
+    public void SetCurrentHealth(int amount)
+    {
+        currentHealth = amount;
     }
 }

@@ -1,54 +1,95 @@
-NOUNS
+[NOUNS]
 
 Collectable
+Variable Name:
+Value:
 
 Enemy
+Follow Path:
+Path:
+Speed:
+
+Goal
 
 Hazard
+Target:
+DamageAmount:
 
 Player
 
-VERBS
-
-Create At Location
+[VERBS]
 
 Bounce
 X:
 Y:
 
+Create At Location
+Target:
+Object To Create:
+Location:
+
+Follow
+Target:
+Do Follow:
+
 Jump
 Speed:
-Time Between Jumps
+Time Between:
 
 Mover
+Direction:
 Speed:
+Flip X Based On Speed:
+Flip Y Based On Speed:
+Rotate Based On Speed:
 
 Move To
+Target:
+New Position:
 
 Shoot At Mouse
+Bullet:
+Offset:
 
 Shoot In Direction
+Bullet:
+Offset:
 
-LOGIC
+[LOGIC]
 
 Data
 Create a new custom data item, or change the value of one that already exists
+Target: 
 Variable Name: The name of the variable you want to create or edit.
 Value:
 
-Health
+Destroy
+Target: The GameObject that you want to destroy (if empty, assume target is the object this component is attached to)
 
-EVENTS
+Health
+Max Health: The maximum health value
+Health: The current health value
+
+Node
+
+Set Text
+Variable Name: The variable whose value you want to display
+
+[EVENTS]
 
 Click Event:
 
 Collision Event:
 
+Compare Event:
+
 Input Event:
+
+In Range Event:
 
 Timer Event:
 
-OTHER
+[OTHER]
 
 Lock
 When an object with the Key component overlaps an object that contains a Lock component, and the Lock's Code property is the same as this Key's Code property, an even is triggered on the Lock, and both the Key and Lock disappear.
