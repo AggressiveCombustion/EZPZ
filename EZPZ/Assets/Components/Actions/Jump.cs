@@ -13,7 +13,7 @@ public class Jump : GameplayComponent
         
     }
 
-    void DoJump()
+    public void DoJump()
     {
         GetComponent<Rigidbody2D>().AddForce(new Vector2(0, speed), ForceMode2D.Impulse);
         onGround = false;
@@ -24,7 +24,7 @@ public class Jump : GameplayComponent
     {
         jumpElapsed += Time.deltaTime;
 
-        if (Input.GetKey(GetKeyFromButtonType(key)) && onGround && active && jumpElapsed > timeBetween)
+        if (Input.GetKeyDown(GetKeyFromButtonType(key)) && onGround && active && jumpElapsed > timeBetween)
         {
             DoJump();
         }

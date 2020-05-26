@@ -16,8 +16,8 @@ public class MoveTo : GameplayComponent
     // Update is called once per frame
     protected override void UpdateButton()
     {
-        //if(Input.GetButton())
-        target.transform.position = newPosition;
+        if (Input.GetKeyDown(GetKeyFromButtonType(key)))
+            target.transform.position = newPosition;
     }
 
     protected override void UpdateConstant()
@@ -30,6 +30,11 @@ public class MoveTo : GameplayComponent
     }
 
     protected override void UpdateOneShot()
+    {
+        target.transform.position = newPosition;
+    }
+
+    public void Move()
     {
         target.transform.position = newPosition;
     }

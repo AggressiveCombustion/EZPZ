@@ -55,8 +55,12 @@ public class Mover : GameplayComponent
 
             if(rotateBasedOnSpeed)
             {
-                float angle = Mathf.Atan2(GetComponent<Rigidbody2D>().velocity.y, GetComponent<Rigidbody2D>().velocity.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                if(GetComponent<Rigidbody2D>().velocity != Vector2.zero)
+                {
+                    float angle = Mathf.Atan2(GetComponent<Rigidbody2D>().velocity.y, GetComponent<Rigidbody2D>().velocity.x) * Mathf.Rad2Deg;
+                    transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
+                }
+                
             }
         }
     }

@@ -13,7 +13,7 @@ public class Destroy : GameplayComponent
 
     protected override void UpdateButton()
     {
-        if(Input.GetKey(GetKeyFromButtonType(key)))
+        if(Input.GetKeyDown(GetKeyFromButtonType(key)))
         {
             DestroyTarget();
         }

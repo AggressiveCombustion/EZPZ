@@ -13,14 +13,23 @@ public enum InteractionType
 public enum ButtonType
 {
     None,
+    A,
     C,
+    D,
     E,
+    F,
     Q,
     R,
+    S,
     V,
+    W,
     X,
     Z,
     SpaceBar,
+    UpArrow,
+    DownArrow,
+    LeftArrow,
+    RightArrow,
     LeftControl,
     LeftShift,
     RightControl,
@@ -69,6 +78,9 @@ public class GameplayComponent : MonoBehaviour
             case InteractionType.Constant:
                 UpdateConstant();
                 break;
+
+            case InteractionType.OnEvent:
+                break;
         }
 
     }
@@ -94,11 +106,26 @@ public class GameplayComponent : MonoBehaviour
     {
         switch(b)
         {
+            case ButtonType.A:
+                return KeyCode.A;
+
             case ButtonType.C:
                 return KeyCode.C;
 
+            case ButtonType.D:
+                return KeyCode.D;
+
+            case ButtonType.DownArrow:
+                return KeyCode.DownArrow;
+
             case ButtonType.E:
                 return KeyCode.E;
+
+            case ButtonType.F:
+                return KeyCode.F;
+
+            case ButtonType.LeftArrow:
+                return KeyCode.LeftArrow;
 
             case ButtonType.LeftControl:
                 return KeyCode.LeftControl;
@@ -112,6 +139,12 @@ public class GameplayComponent : MonoBehaviour
             case ButtonType.R:
                 return KeyCode.R;
 
+            case ButtonType.RightArrow:
+                return KeyCode.RightArrow;
+
+            case ButtonType.S:
+                return KeyCode.S;
+
             case ButtonType.RightControl:
                 return KeyCode.RightControl;
 
@@ -121,8 +154,14 @@ public class GameplayComponent : MonoBehaviour
             case ButtonType.SpaceBar:
                 return KeyCode.Space;
 
+            case ButtonType.UpArrow:
+                return KeyCode.UpArrow;
+
             case ButtonType.V:
                 return KeyCode.V;
+
+            case ButtonType.W:
+                return KeyCode.W;
 
             case ButtonType.X:
                 return KeyCode.X;

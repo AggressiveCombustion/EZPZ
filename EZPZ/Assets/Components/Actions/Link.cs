@@ -15,27 +15,27 @@ public class Link : GameplayComponent
 
     protected override void UpdateButton()
     {
-        if (Input.GetKey(GetKeyFromButtonType(key)))
+        if (Input.GetKeyDown(GetKeyFromButtonType(key)))
         {
-            Activate();
+            ActivateLink();
         }
     }
 
     protected override void UpdateConstant()
     {
-        Activate();
+        ActivateLink();
     }
 
     protected override void UpdateOneShot()
     {
         if(!completed)
         {
-            Activate();
+            ActivateLink();
             completed = true;
         }
     }
 
-    public void Activate()
+    public void ActivateLink()
     {
         if (unlink)
             DoUnlink();

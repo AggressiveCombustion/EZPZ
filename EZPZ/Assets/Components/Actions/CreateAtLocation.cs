@@ -18,7 +18,7 @@ public class CreateAtLocation : GameplayComponent
 
     protected override void UpdateButton()
     {
-        if(Input.GetKey(GetKeyFromButtonType(key)))
+        if(Input.GetKeyDown(GetKeyFromButtonType(key)))
         {
             Create();
         }

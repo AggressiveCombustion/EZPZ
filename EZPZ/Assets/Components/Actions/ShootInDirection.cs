@@ -20,7 +20,7 @@ public class ShootInDirection : GameplayComponent
         // we always need at least a little delay so that it doesn't spam bullets and crash
         shootElapsed += Time.deltaTime;
 
-        if (Input.GetKey(GetKeyFromButtonType(key)) && shootElapsed > timeBetween)
+        if (Input.GetKeyDown(GetKeyFromButtonType(key)) && shootElapsed > timeBetween)
         {
             DoShoot();
             shootElapsed = 0;
@@ -47,7 +47,7 @@ public class ShootInDirection : GameplayComponent
         
     }
 
-    void DoShoot()
+    public void DoShoot()
     {
         GameObject g = Instantiate(bullet, transform.position + new Vector3(offset.x, offset.y), Quaternion.identity);
 

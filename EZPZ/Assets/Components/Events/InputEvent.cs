@@ -28,7 +28,7 @@ public class InputEvent: MonoBehaviour
         if (oneShot && completed)
             return;
 
-        if (Input.GetKey(GetKeyFromButtonType(key)))
+        if (Input.GetKeyDown(GetKeyFromButtonType(key)))
         {
             OnInput.Invoke();
             completed = true;
