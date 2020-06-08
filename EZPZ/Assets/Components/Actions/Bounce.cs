@@ -25,7 +25,7 @@ public class Bounce : MonoBehaviour
         prevVelocity = rb.velocity;
     }
 
-    public void DoBunce()
+    public void DoBounce()
     {
         // save velocity at impact
         Vector2 savedVelocity = prevVelocity;

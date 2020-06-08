@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 
 public class Follow : GameplayComponent
 {
     public GameObject target;
+
+    public bool x = true;
+    public bool y = true;
+    public bool z = false;
 
     bool doFollow = false;
     // Start is called before the first frame update
@@ -52,12 +57,28 @@ public class Follow : GameplayComponent
         if (target == null)
             return;
 
-        transform.position = Vector3.Lerp(transform.position, target.transform.position, speed * Time.deltaTime);
+        if(GetComponent<Rigidbody2D>() != null)
+        {
+            GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position) * speed;
+        }
 
-        if(transform.position == target.transform.position && inputType == InteractionType.OneShot)
+        else
+        {
+            Vector3 newPosition = new Vector3(
+                        x ? target.transform.position.x : transform.position.x,
+                        y ? target.transform.position.y : transform.position.y,
+                        z ? target.transform.position.z : transform.position.z);
+
+            transform.position = Vector3.Lerp(transform.position, newPosition, speed * Time.deltaTime);
+
+            
+        }
+
+        if (transform.position == target.transform.position && inputType == InteractionType.OneShot)
         {
             doFollow = false;
         }
+
     }
 
 

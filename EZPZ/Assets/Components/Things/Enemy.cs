@@ -33,9 +33,10 @@ public class Enemy : MonoBehaviour
                 pathIndex = 0;
         }
 
-        transform.position = Vector3.Lerp(transform.position,
+        /*transform.position = Vector3.Lerp(transform.position,
                                           path[pathIndex].transform.position,
-                                          speed * Time.deltaTime);
+                                          speed * Time.deltaTime);*/
+        GetComponent<Rigidbody2D>().velocity = path[pathIndex].transform.position - transform.position;
     }
 
     bool NearNextNode()

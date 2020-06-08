@@ -11,7 +11,9 @@ public class Hazard : MonoBehaviour
     }
 
     public Target target;
-    int damageAmount = 0;
+
+    public bool destroyOnContact = true;
+    public int damageAmount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,9 @@ public class Hazard : MonoBehaviour
                 {
                     if (collision.GetComponent<Health>() != null)
                         collision.GetComponent<Health>().TakeDamage(damageAmount);
+
+                    if(destroyOnContact)
+                        Destroy(gameObject);
                 }
                 break;
             case Target.Enemy:
@@ -41,6 +46,9 @@ public class Hazard : MonoBehaviour
                 {
                     if (collision.GetComponent<Health>() != null)
                         collision.GetComponent<Health>().TakeDamage(damageAmount);
+
+                    if (destroyOnContact)
+                        Destroy(gameObject);
                 }
                 break;
         }

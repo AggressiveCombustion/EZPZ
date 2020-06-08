@@ -5,8 +5,8 @@ using UnityEngine;
 public class MoveHorizontal : MonoBehaviour
 {
     public InteractionType inputType;
-    public ButtonType rightKey;
     public ButtonType leftKey;
+    public ButtonType rightKey;
     public bool active = true;
     public float delay = 0;
     float delayElapsed = 0;
