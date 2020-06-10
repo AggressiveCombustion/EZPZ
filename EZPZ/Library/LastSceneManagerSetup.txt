@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/SharkmanAndChris.unity
+- path: Assets/Scenes/BounceTest.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

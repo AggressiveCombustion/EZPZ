@@ -7,8 +7,11 @@ public class ShootInDirection : GameplayComponent
     public GameObject bullet;
     public Vector2 direction;
     public Vector2 offset;
+    public bool shootInMoveDirection = false;
     [Range(0.1f, 10)]
     float shootElapsed = 0;
+
+    Vector2 lastShootDir;
 
     // Start is called before the first frame update
     void Start()
@@ -47,14 +50,33 @@ public class ShootInDirection : GameplayComponent
         
     }
 
+    public override void Update()
+    {
+        base.Update();
+
+        if (GetComponent<Rigidbody2D>().velocity != Vector2.zero)
+        {
+            lastShootDir = GetComponent<Rigidbody2D>().velocity;
+            
+        }
+    }
+
     public void DoShoot()
     {
         GameObject g = Instantiate(bullet, transform.position + new Vector3(offset.x, offset.y), Quaternion.identity);
 
         if(g.GetComponent<Rigidbody2D>() != null)
         {
-            //g.GetComponent<Rigidbody2D>().velocity = direction;
-            g.GetComponent<Rigidbody2D>().AddForce(direction, ForceMode2D.Impulse);
+            if (shootInMoveDirection)
+            {
+                g.GetComponent<Rigidbody2D>().AddForce(lastShootDir * direction.magnitude, ForceMode2D.Impulse);
+            }
+
+            else
+            {
+                //g.GetComponent<Rigidbody2D>().velocity = direction;
+                g.GetComponent<Rigidbody2D>().AddForce(direction, ForceMode2D.Impulse);
+            }
         }
     }
 }
