@@ -132,8 +132,6 @@ GameObject:
   - component: {fileID: 156355090}
   - component: {fileID: 156355089}
   - component: {fileID: 156355088}
-  - component: {fileID: 156355092}
-  - component: {fileID: 156355091}
   m_Layer: 0
   m_Name: square (1)
   m_TagString: Untagged
@@ -231,56 +229,6 @@ Transform:
   m_Father: {fileID: 1232293634}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &156355091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156355087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c52956481c2e734ca8f38e668356386, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputType: 3
-  key: 0
-  active: 1
-  delay: 0
-  speed: 0
-  timeBetween: 0.5
-  target: {fileID: 0}
-  objectToCreate: {fileID: 861237733}
-  location: {x: 0, y: 0, z: 0}
---- !u!114 &156355092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156355087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36529f2161e605744affe95a80eb8a07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseButton: 0
-  ifMouseClicked:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 156355091}
-        m_MethodName: Create
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 156355090}
-  position: {x: 1, y: 0, z: 0}
 --- !u!1 &673275324
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +394,7 @@ GameObject:
   - component: {fileID: 820847078}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -578,7 +526,7 @@ MonoBehaviour:
   key: 13
   active: 1
   delay: 0
-  speed: 4
+  speed: 7
   timeBetween: 0
 --- !u!114 &820847078
 MonoBehaviour:

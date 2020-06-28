@@ -27,8 +27,10 @@ public class MouseClickEvent : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(mouseButton))
         {
-            Debug.Log("MX:" + Camera.main.ScreenToWorldPoint(Input.mousePosition).x + " MY:" + Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+            /*Debug.Log("MX:" + Camera.main.ScreenToWorldPoint(Input.mousePosition).x + " MY:" + Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
             Debug.Log("Target Position: " + position + (target == null ? Vector3.zero : target.position));
+            */
+            
             if (position == Vector3.zero || position == null)
             {
                 ifMouseClicked.Invoke(Vector2.zero);
